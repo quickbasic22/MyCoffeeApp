@@ -1,8 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MyCoffeeApp.ViewModels"
              x:Class="MyCoffeeApp.Views.CoffeeEquipment"
-             BackgroundColor="White">
+             BackgroundColor="White"
+             x:DataType="viewmodels:CoffeeEquipmentViewModel">
+    
+    <ContentPage.BindingContext>
+        <viewmodels:CoffeeEquipmentViewModel>
+            
+        </viewmodels:CoffeeEquipmentViewModel>
+    </ContentPage.BindingContext>
     
     <Grid RowDefinitions="*, Auto, Auto, *">
         <Label

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyCoffeeApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,30 +16,7 @@ namespace MyCoffeeApp.Views
         public CoffeeEquipment()
         {
             InitializeComponent();
-            IncreaseCount = new Command(OnIncrease);
-            BindingContext = this;
-        }
-
-        public ICommand IncreaseCount { get; }
-
-        int count = 0;
-        string countDisplay = "Click Me!";
-        public string CountDisplay
-        {
-            get => countDisplay;
-            set
-            {
-                if (value == countDisplay)
-                    return;
-                countDisplay = value;
-                OnPropertyChanged();
-            }
-        }
-
-        void OnIncrease()
-        {
-            count++;
-            CountDisplay = $"You clicked {count} time(s)";
+            BindingContext = new CoffeeEquipmentViewModel();
         }
 
       
